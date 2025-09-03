@@ -307,3 +307,131 @@ h2.section-title {
     outline: 3px solid rgba(8, 59, 99, .18);
     outline-offset: 3px
 }
+
+.events{
+    text-align: center;
+}
+
+.events .cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    background-color: rgb(255, 255, 255);
+    width: 280px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.event-card h3 {
+    color: #052d4a;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.event-card p {
+    color: #052d4a;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+}
+
+/* News section styles */
+.noticias {
+    background-color: var(--bg);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.noticias h2 {
+    color: #052d4a;
+    font-size: 32px;
+    padding: 50px 20px 20px 20px;
+    margin: 0;
+}
+
+.noticias .cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.noticia {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.noticia img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.noticia:hover {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: left;
+    transition: bottom 0.3s ease;
+    color: white;
+}
+
+.noticia:hover .overlay {
+    bottom: 0;
+}
+
+.overlay h3 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.overlay p {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.overlay .btn {
+    background-color: #052d4a;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.overlay .btn:hover {
+    background-color: #083b63;
+}
+
