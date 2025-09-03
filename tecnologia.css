@@ -1,0 +1,209 @@
+* {
+  margin: 0px;
+}
+
+body {
+  background-color: #001C43;
+  /* cor de fundo */
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+#logo {
+  width: 150px;
+  /*largura */
+
+}
+
+ul {
+  list-style: none;
+  /* remove os marcadores */
+  display: flex;
+  gap: 20px;
+  /* espaçamento entre os itens */
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  /* espaço entre os elementos */
+  padding: 18px 32px;
+  background-color: #001C43;
+}
+
+#banner {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: cover;
+
+}
+
+.cursos {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cursos h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  width: 280px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  color: #001C43;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.card p {
+  color: #001C43;
+  font-size: 14px;
+  margin: 15px 0;
+
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.btn {
+  background-color: #001C43 !important;
+  color: white !important;
+  padding: 10px 15px !important;
+  border: none !important;
+  border-radius: 5px !important;
+  margin-top: 10px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.btn:hover {
+  background-color: #00558f !important;
+
+}
+
+.noticia{
+  position: relative;
+  width: 400px;
+  overflow: hidden;
+
+}
+
+.noticia img{
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.noticia:hover{
+  transform: scale(1.05);
+}
+
+.overlay{
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  text-align: left;
+  transition: bottom 0.3s ease;
+}
+
+.noticia:hover .overlay{
+  bottom: 0;
+} 
+
+.overlay p{
+  font-size: 14px ;
+  margin-bottom: 10px;
+}
+
+.noticias {
+  background-color: white;
+  text-align: center;
+}
+
+.noticias h2 {
+  color: #001C43;
+  font-size: 32px;
+  padding: 50px 20px 20px 20px;
+}
+.input-container input{
+  width: 440px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #002d56;
+  outline: none;
+  border-radius: 10px;
+  background-color: #003366;
+  color: white;
+}
+
+.input-container input:focus{
+  border-color: #0a74da;
+  box-shadow: 0 0 8px rgba(10, 116, 218, 0.7);
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.contato{
+  padding: 40px 20px;
+  max-width: 480px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.contato h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+button{
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+}
+
+footer{
+  background-color: #010d1f;
+  padding: 20px;
+  text-align: center;
+}

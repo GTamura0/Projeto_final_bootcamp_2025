@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tecnologia.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp UNIMAR</title>
+</head>
+    <body>
+        <header>    
+        <img src="image/logo.svg" alt="" id="logo"/>
+
+        <ul>
+            <li>Cursos</li>
+            <li>Notícias</li>
+            <li>Contato</li>
+        </ul>
+        </header>
+            <img src="image/unimar_vestibular_banner.jpg" alt="" id="banner">
+
+            <section class="cursos">
+            <h2>Cursos de Tecnologia UNIMAR</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="image/cursos/ads.jpg" alt="Image Ads">
+                    <h3>Analise e Desenvolvimento de Sistemas</h3>
+                    <p>
+                        aprenda a desenvolver e aplicativos para diferentes plataformas. Cursos altamente prático e focado no mercado de trabalho.
+                    </p>
+                    <a href="https://oficial.unimar.br/cursos/analise-e-desenvolvimento-de-sistemas/" class="btn">ver mais</a>
+
+                </div>
+
+                <div class="card">
+                    <img src="image/cursos/bcc.jpg" alt="Image ciencia-da-computacao">
+                    <h3>Bacharelado em Ciência da Computação</h3>
+                    <p>
+                       Prepare-se para atuar em áreas como desenvolvimento de software, inteligência artificial e mais. Fundamentos e inovação para o futuro.
+                    </p>
+                    <a href="https://oficial.unimar.br/cursos/ciencia-da-computacao//" class="btn">ver mais</a>
+                </div>
+
+                <div class="card">
+                    <img src="image/cursos/ia.png" alt="Image inteligencia-artificial">
+                    <h3>Bacharelado em Inteligência Artificial</h3>
+                    <p>
+                      Explore o universo da IA e suas aplicações no mercado. Aprenda a construir algoritmos inteligentes e inovadores.
+                    </p>
+                    <a href="https://oficial.unimar.br/bacharelado-em-inteligencia-artificial/" class="btn">ver mais</a>
+                </div>
+
+                <div class="card">
+                    <img src="image/cursos/cyberseguranca.webp" alt="Image cyberseguranca">
+                    <h3>Bacharelado em Cybersegurança</h3>
+                    <p>
+                       Ideal para quem quer ser protagonista no universo da proteção digital e infraestrutura tecnológica
+                    </p>
+                    <a href="https://oficial.unimar.br/ciberseguranca-e-infraestrutura-de-redes/" class="btn">ver mais</a>
+                </div>
+
+            </div>
+            </section>
+
+            <section class="noticias">
+                <h2>últimas Notícias</h2>
+                <div class="cards">
+                    <div class="noticia">
+                        <img src="image/noticias/unimar_tech_summit.jpg" alt="Unimar Tech Summit">
+                        <div class="overlay">
+                            <h3>Unimar Tech Summit</h3>
+                                <p>
+                                     Participe do maior encontro de tecnologia e inovação do interior paulista.
+                                </p>
+                            <a href="https://lets.4.events/unimar-tech-summit-2025-C11575E131" class="btn">ver mais</a>
+                        </div>
+                    </div>
+
+                     <div class="noticia">
+                            <img src="image/noticias/tec_unimar.jpg" alt="Unimar Tech Summit">
+                                <div class="overlay">
+                                    <h3>TecUnimar: Parque Tecnológico</h3>
+                                        <p>
+                                             A Unimar inaugura o primeiro Parque Tecnológico da região.
+                                        </p>
+                        <a href="https://tec.unimar.br/" class="btn">ver mais</a>
+                                </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="contato">
+                <h2>entre em contato</h2>
+                <form onsubmit="return mostrarAlerta()">
+                    <div class="input-container">
+                        <input type="text" placeholder="digite seu nome">
+                    </div>
+
+                    <div class="input-container">
+                        <input type="email" placeholder="digite seu email">
+                    </div>
+<button class="btn" type="submit" id="submitBtn">enviar</button>
+                </form>
+            </section>
+
+            <footer>
+                <p>&copy; 2023 Unimar. Todos os direitos reservados.</p>
+            </footer>
+
+            <script>
+                function mostrarAlerta(){
+                    alert("Obrigado por entrar em contato!")
+                    return false
+                }
+            
+            </script>
+       
+    </body>
+</html>
+ 

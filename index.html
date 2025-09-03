@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unimar - Página de Cursos (Protótipo)</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="image/logo.svg" alt="Logo da Unimar">
+    <div class="nav">
+      <nav><a href="#">Cursos</a><a href="#">Notícias</a><a href="#">Sobre</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Apresentação Unimar">
+    <div class="image" role="img" aria-label="Campus Unimar (foto aérea)">
+        <img src="image/image 1.png" alt="Foto aérea do campus da Unimar">
+      <h1>BEM VINDO A UNIMAR</h1>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2 class="section-title">Alguns Cursos que a Unimar oferece</h2>
+
+    <div class="courses-buttons">
+      <div class="card card-btn" tabindex="0" data-course="saude">
+        <div class="card-tab">alguns de nossos cursos e bacharelados</div>
+        <button class="course-btn" data-course="saude">área da saúde</button>
+      </div>
+      <div class="card card-btn" tabindex="0" data-course="ti">
+        <div class="card-tab">alguns de nossos cursos e bacharelados</div>
+        <button class="course-btn" data-course="ti" onclick="window.location.href='tecnologia.html'">tecnologia da informação</button>
+      </div>
+      <div class="card card-btn" tabindex="0" data-course="humanas">
+        <div class="card-tab">alguns de nossos cursos e bacharelados</div>
+        <button class="course-btn" data-course="humanas">área de humanas</button>
+      </div>
+    </div>
+
+    <section class="info-box" aria-labelledby="infoTitle">
+      <div class="title" id="infoTitle">CURIOSIDADE</div>
+      <p>
+        A Unimar, além de ser uma das principais universidades da região de Marília, tem várias iniciativas pouco conhecidas, como o programa de mobilidade internacional, que permite intercâmbio em universidades de outros países. A universidade também possui um laboratório de realidade aumentada e virtual, utilizado por cursos como Arquitetura e Engenharia, e um hospital veterinário universitário que oferece atendimento à comunidade e prática para os alunos.
+      </p>
+      <p>
+        Além disso, a Unimar faz parcerias com startups e empresas locais, oferecendo aos alunos a chance de trabalhar em projetos reais. A universidade conta ainda com um Núcleo de Acessibilidade, apoiando alunos com deficiência com tecnologias de ponta, e realiza ações ambientais, como reciclagem de resíduos eletrônicos e promoção de energias renováveis.
+      </p>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <strong id="modalTitle">Título</strong>
+        <button class="close" aria-label="Fechar" id="modalClose">×</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <p>Conteúdo do curso...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align: center; padding: 20px 0; margin-top: 40px;">
+    <p>&copy; 2023 Unimar. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
