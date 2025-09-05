@@ -32,7 +32,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
     box-sizing: border-box;
 }
 header img {
@@ -46,7 +45,6 @@ header img {
     gap: 0;
     margin: 0;
     padding: 0;
-    width: auto;
     max-width: none;
     justify-content: flex-end;
 }
@@ -55,23 +53,34 @@ nav {
     align-items: center;
     gap: 0;
 }
-nav a {
-    color: #cfe6ff;
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 50px;
+}
+nav li {
     margin-left: 32px;
+}
+nav li:first-child {
+    margin-left: 0;
+}
+nav li a {
+    color: #cfe6ff;
     text-decoration: none;
     font-size: 17px;
     font-weight: 400;
     transition: color .18s;
     padding: 0;
 }
-nav a:first-child {
-    margin-left: 0;
-}
-nav a:hover {
+nav li a:hover {
     color: #fff;
 }
 
-/* HERO */
+
 .hero {
     max-width: 100vw;
     margin: 0 auto 0;
@@ -292,7 +301,7 @@ h2.section-title {
     .course-btn { min-width: 180px; font-size: 18px; padding: 28px 12px; }
 }
 @media (max-width:640px) {
-    nav a { display: none; }
+    nav li a { display: none; }
     .hero .image, .hero .image img { height: 120px; }
     .hero h1 { font-size: 20px; }
     .container { padding: 0 6px; }
@@ -397,6 +406,18 @@ h2.section-title {
   height: 48px;
   margin-bottom: 12px;
   stroke: white;
+}
+
+.service-card .site-link {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.service-card .site-link:hover {
+  color: #cce7ff;
 }
 
 .noticias h2 {

@@ -4,31 +4,28 @@
 
 body {
   background-color: #001C43;
-  /* cor de fundo */
   color: white;
   font-family: 'Montserrat', sans-serif;
-
+  text-transform: capitalize;
 }
 
 #logo {
   width: 150px;
-  /*largura */
+
 
 }
 
 ul {
   list-style: none;
-  /* remove os marcadores */
   display: flex;
   gap: 20px;
-  /* espaçamento entre os itens */
+
 
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  /* espaço entre os elementos */
   padding: 18px 32px;
   background-color: #001C43;
 }
@@ -110,6 +107,18 @@ header {
   background-color: #00558f !important;
 
 
+}
+
+#submitBtn {
+  background-color: white !important;
+  color: #4dabf7 !important;
+  border: 2px solid #4dabf7 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#submitBtn:hover {
+  background-color: #f8f9fa !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .noticia{
