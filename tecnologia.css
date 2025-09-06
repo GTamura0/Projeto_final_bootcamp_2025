@@ -28,6 +28,10 @@ header {
   justify-content: space-between;
   padding: 18px 32px;
   background-color: #001C43;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
 }
 
 #banner {
@@ -35,6 +39,7 @@ header {
   height: auto;
   max-height: 700px;
   object-fit: cover;
+  margin-top: 64px;
 
 }
 

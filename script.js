@@ -1,3 +1,4 @@
+// Dados dos cursos para as áreas de Saúde e Humanas
 const courseData = {
     saude: {
         title: 'Área da Saúde — Unimar',
@@ -33,7 +34,7 @@ const modalTitle = document.getElementById('modalTitle');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
 
-// Open modal with content for course
+// Função para abrir modal com informações do curso
 function openModal(courseKey) {
     const data = courseData[courseKey];
     if (!data) return;
@@ -41,7 +42,7 @@ function openModal(courseKey) {
     modalBody.innerHTML = data.html + `<p style="margin-top:12px"><a href='#' class='btn' style='text-decoration:none'>Inscreva-se</a> <button class='btn ghost' id='downloadSyllabus'>Baixar ementa</button></p>`;
     modal.style.display = 'flex';
     modal.setAttribute('aria-hidden', 'false');
-    // focus management
+    // Gerenciamento de foco
     modalClose.focus();
 
     const dl = document.getElementById('downloadSyllabus');
@@ -54,12 +55,12 @@ function openModal(courseKey) {
 function openCourseList(area) {
     const cursos = cursosPorArea[area];
     if (!cursos) return;
-    modalTitle.textContent = area === "saude" ? "Cursos da Área da Saúde" : "Cursos da Área de Humanas";
+    modalTitle.textContent = area === "saude" ? "Cursos/Bacharelados da Área da Saúde" : "Cursos/Bacharelados da Área de Humanas";
     modalBody.innerHTML = `<ul style="padding-left:0;list-style:none;">
-        ${cursos.map(c => 
+        ${cursos.map(c =>
             `<li style="margin-bottom:14px;">
                 <strong>${c.nome}</strong><br>
-                <a href="${c.link}" target="_blank" class="btn" style="margin-top:4px;">Acessar site do curso</a>
+                <button class="btn" style="margin-top:4px;" onclick="window.open('${c.link}', '_blank')">Acessar site</button>
             </li>`
         ).join("")}
     </ul>`;
