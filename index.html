@@ -1,129 +1,118 @@
-<!-- Página principal da Unimar -->
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Unimar - Projeto Bootcamp (FINALIZADO)</title>
-
-  <link rel="stylesheet" href="style.css">
+  <title>Unimar — Universidade de Marília</title>
+  <meta name="description" content="Unimar: cursos de Saúde, Tecnologia e Humanas, notícias, vestibular e parcerias em Marília." />
+  <link rel="icon" href="image/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Cabeçalho com logo e navegação -->
-  <header>
-    <img src="image/logo.svg" alt="Logo da Unimar">
-    <div class="nav">
-      <nav>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site">
+    <div class="header-in">
+      <a class="brand" href="index.html"><img src="image/logo.svg" alt="Logo da Unimar" />Unimar</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu">☰</button>
+      <nav class="main" id="mainNav" aria-label="Navegação principal">
         <ul>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#sobre">A Unimar</a></li>
           <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
+          <li><a class="nav-cta" href="https://portal.unimar.br/seletivo/seletivo_inscricao/?edital=C3117A0194E88CA8F6DEF9F8A8FC43A82D6B70D6F85C94136C647F647C95C99D" target="_blank" rel="noopener">Vestibular 2026</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Seção hero com imagem de fundo e título -->
   <section class="hero" aria-label="Apresentação Unimar">
-    <div class="image" role="img" aria-label="Campus Unimar (foto aérea)">
-        <img src="image/image 1.png" alt="Foto aérea do campus da Unimar">
-      <h1>BEM VINDO A UNIMAR</h1>
+    <img src="image/image 1.png" alt="" aria-hidden="true" />
+    <div class="hero-in">
+      <span class="eyebrow">Marília • Presencial e EAD</span>
+      <h1>BEM-VINDO À UNIMAR</h1>
+      <p>Saúde, Tecnologia e Humanas com laboratórios modernos, hospital universitário e parcerias reais com o mercado.</p>
+      <div class="hero-actions">
+        <a class="btn btn-cta" href="https://portal.unimar.br/seletivo/seletivo_inscricao/?edital=C3117A0194E88CA8F6DEF9F8A8FC43A82D6B70D6F85C94136C647F647C95C99D" target="_blank" rel="noopener">Inscreva-se no Vestibular</a>
+        <a class="btn btn-ghost" href="#cursos">Ver cursos</a>
+      </div>
     </div>
   </section>
 
-  <main class="container">
-    <h2 class="section-title">Alguns cursos/bacharelados que a Unimar oferece</h2>
+  <main class="container" id="conteudo">
+    <section class="section" id="cursos" aria-labelledby="cursosTitle">
+      <div class="section-head">
+        <div><h2 id="cursosTitle">Cursos e bacharelados</h2><p>Escolha uma área para ver os cursos</p></div>
+      </div>
+      <div class="grid-courses">
+        <button class="course-card" data-course="saude">
+          <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 2a7 7 0 00-7 7v3a7 7 0 007 7 7 7 0 007-7v-3a7 7 0 00-7-7z" /></svg>
+          <strong>Área da Saúde</strong><small>Enfermagem • Fisio • Nutri • Farmácia</small>
+        </button>
+        <button class="course-card" data-course="ti">
+          <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m-6-8h6" /><rect x="3" y="6" width="18" height="12" rx="2" /></svg>
+          <strong>Tecnologia da Informação</strong><small>ADS • CC • IA • Cyber</small>
+        </button>
+        <button class="course-card" data-course="humanas">
+          <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7.5" /></svg>
+          <strong>Área de Humanas</strong><small>Adm • Direito • Psicologia</small>
+        </button>
+      </div>
 
-    <div class="courses-buttons">
-      <div class="service-card" tabindex="0" data-course="saude" onclick="openCourseList('saude')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a7 7 0 00-7 7v3a7 7 0 007 7 7 7 0 007-7v-3a7 7 0 00-7-7z" />
-        </svg>
-        <span>Área da Saúde</span>
+      <div class="info-band" id="sobre">
+        <h2>CURIOSIDADE</h2>
+        <p>A Unimar, além de ser uma das principais universidades da região de Marília, tem mobilidade internacional, laboratório de realidade aumentada e virtual, hospital veterinário universitário e Núcleo de Acessibilidade.</p>
+        <p>Parcerias com startups e empresas locais colocam os alunos em projetos reais, com ações de reciclagem de resíduos eletrônicos e energias renováveis.</p>
       </div>
-      <div class="service-card" tabindex="0" data-course="ti" onclick="window.location.href='tecnologia.html'">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m-6-8h6" />
-          <rect x="3" y="6" width="18" height="12" rx="2" ry="2" />
-        </svg>
-        <span>Tecnologia da Informação</span>
-      </div>
-      <div class="service-card" tabindex="0" data-course="humanas" onclick="openCourseList('humanas')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 21.75a11.952 11.952 0 01-6.825-3.693 12.083 12.083 0 01.665-6.479L12 14z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7.5" />
-        </svg>
-        <span>Área de Humanas</span>
-      </div>
-    </div>
-
-    <section class="service-cards" aria-label="Serviços da Unimar">
     </section>
 
-    <section class="info-box" aria-labelledby="infoTitle">
-      <div class="title" id="infoTitle">CURIOSIDADE</div>
-      <p>
-        A Unimar, além de ser uma das principais universidades da região de Marília, tem várias iniciativas pouco conhecidas, como o programa de mobilidade internacional, que permite intercâmbio em universidades de outros países. A universidade também possui um laboratório de realidade aumentada e virtual, utilizado por cursos como Arquitetura e Engenharia, e um hospital veterinário universitário que oferece atendimento à comunidade e prática para os alunos.
-      </p>
-      <p>
-        Além disso, a Unimar faz parcerias com startups e empresas locais, oferecendo aos alunos a chance de trabalhar em projetos reais. A universidade conta ainda com um Núcleo de Acessibilidade, apoiando alunos com deficiência com tecnologias de ponta, e realiza ações ambientais, como reciclagem de resíduos eletrônicos e promoção de energias renováveis.
-      </p>
+    <section class="section" id="noticias" aria-labelledby="notTitle">
+      <div class="section-head">
+        <div><h2 id="notTitle">Últimas notícias</h2><p>Fique por dentro da universidade</p></div>
+      </div>
+      <div class="cards">
+        <article class="n-card">
+          <img src="image/noticias/unimar_tech_summit.jpg" alt="Palco do Unimar Tech Summit" loading="lazy" />
+          <div class="n-body">
+            <span class="tag">Evento</span>
+            <h3>Unimar Tech Summit</h3>
+            <p>O maior encontro de tecnologia e inovação do interior paulista.</p>
+            <a href="https://lets.4.events/unimar-tech-summit-2025-C11575E131" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a>
+          </div>
+        </article>
+        <article class="n-card">
+          <img src="image/unimar_vestibular_banner.jpg" alt="Banner do vestibular Unimar 2026" loading="lazy" />
+          <div class="n-body">
+            <span class="tag">Vestibular</span>
+            <h3>Vestibular Unimar 2026</h3>
+            <p>Inscreva-se agora e dê o próximo passo rumo ao seu futuro.</p>
+            <a href="https://portal.unimar.br/seletivo/seletivo_inscricao/?edital=C3117A0194E88CA8F6DEF9F8A8FC43A82D6B70D6F85C94136C647F647C95C99D" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="noticias" id="noticias">
-        <h2>Últimas Notícias</h2>
-        <div class="cards">
-            <div class="noticia">
-                <img src="image/noticias/unimar_tech_summit.jpg" alt="Unimar Tech Summit">
-                <div class="overlay">
-                    <h3>Unimar Tech Summit</h3>
-                    <p>
-                         Participe do maior encontro de tecnologia e inovação do interior paulista.
-                    </p>
-                    <a href="https://lets.4.events/unimar-tech-summit-2025-C11575E131" class="btn">ver mais</a>
-                </div>
-            </div>
-
-             <div class="noticia">
-                    <img src="image/unimar_vestibular_banner.jpg" alt="vestibular">
-                    <div class="overlay">
-                        <h3>Vestibular unimar: Inscreva-se agora mesmo no Vestibular Unimar 2026</h3>
-                        <p>
-                             A data está marcada! Prepare-se para dar o próximo passo rumo ao seu sucesso.
-                        </p>
-                        <a href="https://portal.unimar.br/seletivo/seletivo_inscricao/?edital=C3117A0194E88CA8F6DEF9F8A8FC43A82D6B70D6F85C94136C647F647C95C99D&_gl=1*14004qa*_gcl_aw*R0NMLjE3NTY5Mzc1NzYuRUFJYUlRb2JDaE1Jb2JMWHY4Njlqd01WZWlCRUNCMlRXZ1hrRUFBWUFTQUFFZ0tybV9EX0J3RQ..*_gcl_au*NDg3MjU5OTQzLjE3NTU1MTUwMjE." class="btn">ver mais</a>
-                    </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="parceiros">
-        <h2>Parceiros</h2>
-        <div class="parceiros-cards">
-            <img src="https://logodownload.org/wp-content/uploads/2014/09/google-logo-1.png" alt="Parceiro 1">
-            <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/14018578-logotipo-da-microsoft-em-fundo-transparente-gratis-vetor.jpg" alt="Parceiro 2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Red_Hat_Logo_2019.svg" alt="Parceiro 3">
-        </div>
+    <section class="partners" id="parceiros" aria-labelledby="parTitle">
+      <h2 id="parTitle">Parceiros</h2>
+      <div class="partner-row">
+        <img src="https://logodownload.org/wp-content/uploads/2014/09/google-logo-1.png" alt="Google" loading="lazy" />
+        <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/14018578-logotipo-da-microsoft-em-fundo-transparente-gratis-vetor.jpg" alt="Microsoft" loading="lazy" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Red_Hat_Logo_2019.svg" alt="Red Hat" loading="lazy" />
+      </div>
     </section>
   </main>
 
-  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
     <div class="modal" role="document">
       <div class="modal-header">
         <strong id="modalTitle">Título</strong>
         <button class="close" aria-label="Fechar" id="modalClose">×</button>
       </div>
-      <div class="modal-body" id="modalBody">
-        <p>Conteúdo do curso...</p>
-      </div>
+      <div class="modal-body" id="modalBody"></div>
     </div>
   </div>
 
-  <footer style="text-align: center; padding: 20px 0; margin-top: 40px;">
-    <p>&copy; 2023 Unimar. Todos os direitos reservados.</p>
-  </footer>
-
+  <footer class="site"><p><strong>Unimar</strong> — Universidade de Marília · &copy; 2026 Todos os direitos reservados.</p></footer>
   <script src="script.js"></script>
 </body>
 </html>

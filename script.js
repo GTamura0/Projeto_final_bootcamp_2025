@@ -1,117 +1,81 @@
-// Dados dos cursos para as áreas de Saúde e Humanas
-const courseData = {
-    saude: {
-        title: 'Área da Saúde — Unimar',
-        html: `<p><strong>Principais cursos:</strong> Enfermagem, Fisioterapia, Nutrição, Farmácia.</p>
-               <p><strong>Diferenciais:</strong> Hospital universitário, laboratórios, estágios garantidos e projetos comunitários.</p>
-               <p><strong>Formato:</strong> Presencial com possibilidades de extensão e cursos de verão.</p>`
-    },
-    humanas: {
-        title: 'Área de Humanas — Unimar',
-        html: `<p><strong>Principais cursos:</strong> Administração, Pedagogia, Psicologia, Serviço Social.</p>
-               <p><strong>Diferenciais:</strong> Projetos de extensão, estágios em escolas e empresas, formação para o mercado.</p>
-               <p><strong>Competências:</strong> Comunicação, liderança, pesquisa e atuação comunitária.</p>`
-    }
-};
-
 const cursosPorArea = {
-    saude: [
-        { nome: "Enfermagem", link: "https://oficial.unimar.br/cursos/enfermagem/" },
-        { nome: "Fisioterapia", link: "https://oficial.unimar.br/cursos/fisioterapia/" },
-        { nome: "Nutrição", link: "https://oficial.unimar.br/cursos/nutricao/" },
-        { nome: "Farmácia", link: "https://oficial.unimar.br/cursos/farmacia/" }
-    ],
-    humanas: [
-        { nome: "Administração", link: "https://oficial.unimar.br/cursos/administracao/" },
-        { nome: "Ciências contábeis", link: "https://oficial.unimar.br/cursos/ciencias-contabeis/" },
-        { nome: "Direito", link: "https://oficial.unimar.br/cursos/direito/" },
-        { nome: "Publicidade e Propaganda", link: "https://oficial.unimar.br/cursos/publicidade-e-propaganda/" }
-    ]
+  saude: { title: 'Cursos da Área da Saúde', items: [
+    { nome: 'Enfermagem', link: 'https://oficial.unimar.br/cursos/enfermagem/' },
+    { nome: 'Fisioterapia', link: 'https://oficial.unimar.br/cursos/fisioterapia/' },
+    { nome: 'Nutrição', link: 'https://oficial.unimar.br/cursos/nutricao/' },
+    { nome: 'Farmácia', link: 'https://oficial.unimar.br/cursos/farmacia/' } ] },
+  humanas: { title: 'Cursos da Área de Humanas', items: [
+    { nome: 'Administração', link: 'https://oficial.unimar.br/cursos/administracao/' },
+    { nome: 'Ciências Contábeis', link: 'https://oficial.unimar.br/cursos/ciencias-contabeis/' },
+    { nome: 'Direito', link: 'https://oficial.unimar.br/cursos/direito/' },
+    { nome: 'Publicidade e Propaganda', link: 'https://oficial.unimar.br/cursos/publicidade-e-propaganda/' } ] }
 };
-
 const modal = document.getElementById('modal');
 const modalTitle = document.getElementById('modalTitle');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
-
-// Função para abrir modal com informações do curso
-function openModal(courseKey) {
-    const data = courseData[courseKey];
-    if (!data) return;
-    modalTitle.textContent = data.title;
-    modalBody.innerHTML = data.html + `<p style="margin-top:12px"><a href='#' class='btn' style='text-decoration:none'>Inscreva-se</a> <button class='btn ghost' id='downloadSyllabus'>Baixar ementa</button></p>`;
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden', 'false');
-    // Gerenciamento de foco
-    modalClose.focus();
-
-    const dl = document.getElementById('downloadSyllabus');
-    if (dl) {
-        dl.addEventListener('click', (e) => { e.preventDefault(); alert('Simulação: iniciando download da ementa em PDF...'); });
-    }
-}
-
-// Nova função para mostrar lista de cursos
+let lastFocus = null;
 function openCourseList(area) {
-    const cursos = cursosPorArea[area];
-    if (!cursos) return;
-    modalTitle.textContent = area === "saude" ? "Cursos/Bacharelados da Área da Saúde" : "Cursos/Bacharelados da Área de Humanas";
-    modalBody.innerHTML = `<ul style="padding-left:0;list-style:none;">
-        ${cursos.map(c =>
-            `<li style="margin-bottom:14px;">
-                <strong>${c.nome}</strong><br>
-                <button class="btn" style="margin-top:4px;" onclick="window.open('${c.link}', '_blank')">Acessar site</button>
-            </li>`
-        ).join("")}
-    </ul>`;
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden', 'false');
-    modalClose.focus();
+  if (area === 'ti') { window.location.href = 'tecnologia.html'; return; }
+  const data = cursosPorArea[area];
+  if (!data || !modal) return;
+  lastFocus = document.activeElement;
+  modalTitle.textContent = data.title;
+  modalBody.innerHTML = '<ul>' + data.items.map(c =>
+    '<li><strong>' + c.nome + '</strong><a class="btn btn-sm" href="' + c.link + '" target="_blank" rel="noopener">Acessar site</a></li>'
+  ).join('') + '</ul>';
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
 }
-
 function closeModal() {
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden', 'true');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
 }
-
-document.addEventListener('click', (e) => {
-    const more = e.target.closest('[data-action="more"]');
-    if (more) {
-        const card = more.closest('.card');
-        const key = card.dataset.course;
-        openModal(key);
-        return;
-    }
-    const apply = e.target.closest('[data-action="apply"]');
-    if (apply) {
-        const card = apply.closest('.card');
-        const key = card.dataset.course;
-        alert('Abrir página de disciplinas para: ' + (card.querySelector('h3')?.textContent || key));
-        return;
-    }
-    if (e.target === modal) closeModal();
+document.querySelectorAll('.course-card').forEach(btn => {
+  btn.addEventListener('click', () => openCourseList(btn.dataset.course));
 });
-
-modalClose.addEventListener('click', closeModal);
-
+if (modalClose) modalClose.addEventListener('click', closeModal);
+if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        if (modal.style.display === 'flex') closeModal();
-    }
-    if (e.key === 'Enter') {
-        const active = document.activeElement;
-        if (active && active.classList.contains('card')) {
-            openModal(active.dataset.course);
-        }
-    }
+  if (e.key === 'Escape' && modal && modal.classList.contains('open')) closeModal();
+  if (e.key === 'Tab' && modal && modal.classList.contains('open')) {
+    const f = modal.querySelectorAll('button, a[href]');
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
-
-document.querySelectorAll('.course-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        if (btn.dataset.course === "saude" || btn.dataset.course === "humanas") {
-            openCourseList(btn.dataset.course);
-        } else {
-            openModal(btn.dataset.course);
-        }
-    });
-});
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  });
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+}
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fName');
+    const mail = document.getElementById('fMail');
+    const nameErr = document.getElementById('fNameErr');
+    const mailErr = document.getElementById('fMailErr');
+    let ok = true;
+    nameErr.textContent = ''; mailErr.textContent = '';
+    if (!name.value.trim() || name.value.trim().length < 2) { nameErr.textContent = 'Informe seu nome.'; ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value.trim())) { mailErr.textContent = 'Informe um e-mail válido.'; ok = false; }
+    if (!ok) { (!nameErr.textContent ? mail : name).focus(); return; }
+    document.getElementById('formOk').hidden = false;
+    form.reset();
+    name.focus();
+  });
+}

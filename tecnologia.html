@@ -1,119 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="tecnologia.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootcamp UNIMAR</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos de Tecnologia — Unimar</title>
+  <meta name="description" content="ADS, Ciência da Computação, Inteligência Artificial e Cibersegurança na Unimar." />
+  <link rel="icon" href="image/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-    <body>
-        <header>    
-        <img src="image/logo.svg" alt="" id="logo"/>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site">
+    <div class="header-in">
+      <a class="brand" href="index.html"><img src="image/logo.svg" alt="Logo da Unimar" />Unimar</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu">☰</button>
+      <nav class="main" id="mainNav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#cursos">Cursos de TI</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a class="nav-cta" href="https://portal.unimar.br/seletivo/seletivo_inscricao/?edital=C3117A0194E88CA8F6DEF9F8A8FC43A82D6B70D6F85C94136C647F647C95C99D" target="_blank" rel="noopener">Vestibular 2026</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        
-        </header>
-            <img src="image/unimar_vestibular_banner.jpg" alt="" id="banner">
+  <section class="page-hero" aria-label="Cursos de tecnologia">
+    <img src="image/unimar_vestibular_banner.jpg" alt="" aria-hidden="true" />
+    <div class="page-hero-in">
+      <span class="eyebrow">Tecnologia da Informação</span>
+      <h1>Cursos de Tecnologia Unimar</h1>
+      <p>Formação prática, laboratórios modernos e conexão direta com o mercado.</p>
+    </div>
+  </section>
 
-            <section class="cursos">
-            <h2>Cursos de Tecnologia UNIMAR</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="image/cursos/ads.jpg" alt="Image Ads">
-                    <h3>Analise e Desenvolvimento de Sistemas</h3>
-                    <p>
-                        aprenda a desenvolver e aplicativos para diferentes plataformas. Cursos altamente prático e focado no mercado de trabalho.
-                    </p>
-                    <a href="https://oficial.unimar.br/cursos/analise-e-desenvolvimento-de-sistemas/" class="btn">ver mais</a>
+  <main class="container" id="conteudo">
+    <section class="section" id="cursos" aria-labelledby="cursosTitle">
+      <div class="section-head"><div><h2 id="cursosTitle">Escolha seu curso</h2><p>4 formações em alta no mercado</p></div></div>
+      <div class="cards">
+        <article class="t-card">
+          <img src="image/cursos/ads.jpg" alt="Estudantes em laboratório de ADS" loading="lazy" />
+          <div class="t-body"><h3>Análise e Desenvolvimento de Sistemas</h3><p>Desenvolvimento web, mobile e back-end com foco prático no mercado.</p><a href="https://oficial.unimar.br/cursos/analise-e-desenvolvimento-de-sistemas/" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a></div>
+        </article>
+        <article class="t-card">
+          <img src="image/cursos/bcc.jpg" alt="Laboratório de Ciência da Computação" loading="lazy" />
+          <div class="t-body"><h3>Bacharelado em Ciência da Computação</h3><p>Software, IA e fundamentos sólidos para inovar no futuro.</p><a href="https://oficial.unimar.br/cursos/ciencia-da-computacao/" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a></div>
+        </article>
+        <article class="t-card">
+          <img src="image/cursos/ia.png" alt="Ilustração de inteligência artificial" loading="lazy" />
+          <div class="t-body"><h3>Bacharelado em Inteligência Artificial</h3><p>Algoritmos inteligentes, machine learning e aplicações reais.</p><a href="https://oficial.unimar.br/bacharelado-em-inteligencia-artificial/" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a></div>
+        </article>
+        <article class="t-card">
+          <img src="image/cursos/cyberseguranca.webp" alt="Profissional de cibersegurança" loading="lazy" />
+          <div class="t-body"><h3>Bacharelado em Cibersegurança</h3><p>Proteção digital, redes e infraestrutura crítica.</p><a href="https://oficial.unimar.br/ciberseguranca-e-infraestrutura-de-redes/" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a></div>
+        </article>
+      </div>
+    </section>
 
-                </div>
+    <section class="section" id="noticias" aria-labelledby="notTitle">
+      <div class="section-head"><div><h2 id="notTitle">Últimas notícias</h2><p>Tecnologia e inovação</p></div></div>
+      <div class="cards">
+        <article class="n-card">
+          <img src="image/noticias/unimar_tech_summit.jpg" alt="Unimar Tech Summit" loading="lazy" />
+          <div class="n-body"><span class="tag">Evento</span><h3>Unimar Tech Summit</h3><p>O maior encontro de tecnologia e inovação do interior paulista.</p><a href="https://lets.4.events/unimar-tech-summit-2025-C11575E131" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a></div>
+        </article>
+        <article class="n-card">
+          <img src="image/noticias/tec_unimar.jpg" alt="Parque tecnológico TecUnimar" loading="lazy" />
+          <div class="n-body"><span class="tag">Inovação</span><h3>TecUnimar: Parque Tecnológico</h3><p>O primeiro Parque Tecnológico da região, dentro da Unimar.</p><a href="https://tec.unimar.br/" class="btn btn-sm" target="_blank" rel="noopener">Ver mais</a></div>
+        </article>
+      </div>
+    </section>
 
-                <div class="card">
-                    <img src="image/cursos/bcc.jpg" alt="Image ciencia-da-computacao">
-                    <h3>Bacharelado em Ciência da Computação</h3>
-                    <p>
-                       Prepare-se para atuar em áreas como desenvolvimento de software, inteligência artificial e mais. Fundamentos e inovação para o futuro.
-                    </p>
-                    <a href="https://oficial.unimar.br/cursos/ciencia-da-computacao//" class="btn">ver mais</a>
-                </div>
+    <section class="section" id="contato" aria-labelledby="ctTitle">
+      <form class="contact" id="contactForm" novalidate>
+        <h2 id="ctTitle">Entre em contato</h2>
+        <p>Respondemos em até 1 dia útil.</p>
+        <div class="form-ok" id="formOk" hidden>Obrigado! Recebemos seu contato.</div>
+        <div class="field">
+          <label for="fName">Nome</label>
+          <input id="fName" name="nome" type="text" placeholder="Digite seu nome" autocomplete="name" required />
+          <p class="err" id="fNameErr"></p>
+        </div>
+        <div class="field">
+          <label for="fMail">E-mail</label>
+          <input id="fMail" name="email" type="email" placeholder="voce@email.com" autocomplete="email" required />
+          <p class="err" id="fMailErr"></p>
+        </div>
+        <button class="btn btn-cta" type="submit" style="width:100%">Enviar</button>
+      </form>
+    </section>
+  </main>
 
-                <div class="card">
-                    <img src="image/cursos/ia.png" alt="Image inteligencia-artificial">
-                    <h3>Bacharelado em Inteligência Artificial</h3>
-                    <p>
-                      Explore o universo da IA e suas aplicações no mercado. Aprenda a construir algoritmos inteligentes e inovadores.
-                    </p>
-                    <a href="https://oficial.unimar.br/bacharelado-em-inteligencia-artificial/" class="btn">ver mais</a>
-                </div>
-
-                <div class="card">
-                    <img src="image/cursos/cyberseguranca.webp" alt="Image cyberseguranca">
-                    <h3>Bacharelado em Cybersegurança</h3>
-                    <p>
-                       Ideal para quem quer ser protagonista no universo da proteção digital e infraestrutura tecnológica
-                    </p>
-                    <a href="https://oficial.unimar.br/ciberseguranca-e-infraestrutura-de-redes/" class="btn">ver mais</a>
-                </div>
-
-            </div>
-            </section>
-
-            <section class="noticias">
-                <h2>últimas Notícias</h2>
-                <div class="cards">
-                    <div class="noticia">
-                        <img src="image/noticias/unimar_tech_summit.jpg" alt="Unimar Tech Summit">
-                        <div class="overlay">
-                            <h3>Unimar Tech Summit</h3>
-                                <p>
-                                     Participe do maior encontro de tecnologia e inovação do interior paulista.
-                                </p>
-                            <a href="https://lets.4.events/unimar-tech-summit-2025-C11575E131" class="btn">ver mais</a>
-                        </div>
-                    </div>
-
-                     <div class="noticia">
-                            <img src="image/noticias/tec_unimar.jpg" alt="Unimar Tech Summit">
-                                <div class="overlay">
-                                    <h3>TecUnimar: Parque Tecnológico</h3>
-                                        <p>
-                                             A Unimar inaugura o primeiro Parque Tecnológico da região.
-                                        </p>
-                        <a href="https://tec.unimar.br/" class="btn">ver mais</a>
-                                </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <section class="contato">
-                <h2>entre em contato</h2>
-                <form onsubmit="return mostrarAlerta()">
-                    <div class="input-container">
-                        <input type="text" placeholder="digite seu nome">
-                    </div>
-
-                    <div class="input-container">
-                        <input type="email" placeholder="digite seu email">
-                    </div>
-<button class="btn" type="submit" id="submitBtn">Enviar</button>
-                </form>
-            </section>
-
-            <footer>
-                <p>&copy; 2023 Unimar. Todos os direitos reservados.</p>
-            </footer>
-
-            <script>
-                function mostrarAlerta(){
-                    alert("Obrigado por entrar em contato!")
-                    return false
-                }
-            
-            </script>
-       
-    </body>
+  <footer class="site"><p><strong>Unimar</strong> — Universidade de Marília · &copy; 2026 Todos os direitos reservados.</p></footer>
+  <script src="script.js"></script>
+</body>
 </html>
- 
